@@ -1,0 +1,7 @@
+# gitignore file
+
+## Ignore ./data folder
+data
+
+## Ignore .env file
+.env
