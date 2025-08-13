@@ -48,13 +48,17 @@ runs:
   <summary>Solution</summary>
 
 ```dockerfile
-FROM alpine:3.10
+FROM alpine:3.22
 
-COPY entrypoint.sh /entrypoint.sh
+# Set the working directory inside the container
+WORKDIR /usr/src
 
+# Copy any source file(s) required for the action
+COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+# Configure the container to be run as an executable
+ENTRYPOINT ["/usr/src/entrypoint.sh"]
 ```
 
 </details>
